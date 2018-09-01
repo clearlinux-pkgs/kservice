@@ -6,7 +6,7 @@
 #
 Name     : kservice
 Version  : 5.49.0
-Release  : 3
+Release  : 4
 URL      : https://download.kde.org/stable/frameworks/5.49/kservice-5.49.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.49/kservice-5.49.0.tar.xz
 Source99 : https://download.kde.org/stable/frameworks/5.49/kservice-5.49.0.tar.xz.sig
@@ -116,7 +116,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535432264
+export SOURCE_DATE_EPOCH=1535777159
 mkdir clr-build
 pushd clr-build
 %cmake ..
@@ -124,7 +124,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535432264
+export SOURCE_DATE_EPOCH=1535777159
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/kservice
 cp COPYING %{buildroot}/usr/share/doc/kservice/COPYING
@@ -134,6 +134,9 @@ pushd clr-build
 %make_install
 popd
 %find_lang kservice5
+## install_append content
+mv %{buildroot}/etc/xdg/* %{buildroot}/usr/share/xdg/
+## install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -147,6 +150,7 @@ popd
 /usr/share/kservicetypes5/application.desktop
 /usr/share/kservicetypes5/kplugininfo.desktop
 /usr/share/xdg/kservice.categories
+/usr/share/xdg/menus/applications.menu
 
 %files dev
 %defattr(-,root,root,-)
