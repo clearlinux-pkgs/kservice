@@ -5,20 +5,20 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kservice
-Version  : 5.50.0
-Release  : 6
-URL      : https://download.kde.org/stable/frameworks/5.50/kservice-5.50.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.50/kservice-5.50.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.50/kservice-5.50.0.tar.xz.sig
+Version  : 5.51.0
+Release  : 7
+URL      : https://download.kde.org/stable/frameworks/5.51/kservice-5.51.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.51/kservice-5.51.0.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.51/kservice-5.51.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0 LGPL-2.1
-Requires: kservice-bin
-Requires: kservice-lib
-Requires: kservice-license
-Requires: kservice-data
-Requires: kservice-locales
-Requires: kservice-man
+Requires: kservice-bin = %{version}-%{release}
+Requires: kservice-data = %{version}-%{release}
+Requires: kservice-lib = %{version}-%{release}
+Requires: kservice-license = %{version}-%{release}
+Requires: kservice-locales = %{version}-%{release}
+Requires: kservice-man = %{version}-%{release}
 BuildRequires : bison-dev
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
@@ -33,7 +33,7 @@ BuildRequires : kdoctools-dev
 BuildRequires : ki18n-dev
 BuildRequires : libxml2
 BuildRequires : libxslt
-BuildRequires : qtbase-dev qtbase-extras mesa-dev
+BuildRequires : qtbase-dev mesa-dev
 
 %description
 # KService
@@ -46,9 +46,9 @@ application specific code.
 %package bin
 Summary: bin components for the kservice package.
 Group: Binaries
-Requires: kservice-data
-Requires: kservice-license
-Requires: kservice-man
+Requires: kservice-data = %{version}-%{release}
+Requires: kservice-license = %{version}-%{release}
+Requires: kservice-man = %{version}-%{release}
 
 %description bin
 bin components for the kservice package.
@@ -65,10 +65,10 @@ data components for the kservice package.
 %package dev
 Summary: dev components for the kservice package.
 Group: Development
-Requires: kservice-lib
-Requires: kservice-bin
-Requires: kservice-data
-Provides: kservice-devel
+Requires: kservice-lib = %{version}-%{release}
+Requires: kservice-bin = %{version}-%{release}
+Requires: kservice-data = %{version}-%{release}
+Provides: kservice-devel = %{version}-%{release}
 
 %description dev
 dev components for the kservice package.
@@ -77,8 +77,8 @@ dev components for the kservice package.
 %package lib
 Summary: lib components for the kservice package.
 Group: Libraries
-Requires: kservice-data
-Requires: kservice-license
+Requires: kservice-data = %{version}-%{release}
+Requires: kservice-license = %{version}-%{release}
 
 %description lib
 lib components for the kservice package.
@@ -109,27 +109,27 @@ man components for the kservice package.
 
 
 %prep
-%setup -q -n kservice-5.50.0
+%setup -q -n kservice-5.51.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536435785
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1539623758
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
-make  %{?_smp_mflags}
+make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1536435785
+export SOURCE_DATE_EPOCH=1539623758
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/kservice
-cp COPYING %{buildroot}/usr/share/doc/kservice/COPYING
-cp COPYING.GPL3 %{buildroot}/usr/share/doc/kservice/COPYING.GPL3
-cp COPYING.LIB %{buildroot}/usr/share/doc/kservice/COPYING.LIB
+mkdir -p %{buildroot}/usr/share/package-licenses/kservice
+cp COPYING %{buildroot}/usr/share/package-licenses/kservice/COPYING
+cp COPYING.GPL3 %{buildroot}/usr/share/package-licenses/kservice/COPYING.GPL3
+cp COPYING.LIB %{buildroot}/usr/share/package-licenses/kservice/COPYING.LIB
 pushd clr-build
 %make_install
 popd
@@ -197,16 +197,16 @@ mv %{buildroot}/etc/xdg/* %{buildroot}/usr/share/xdg/
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5Service.so.5
-/usr/lib64/libKF5Service.so.5.50.0
+/usr/lib64/libKF5Service.so.5.51.0
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/kservice/COPYING
-/usr/share/doc/kservice/COPYING.GPL3
-/usr/share/doc/kservice/COPYING.LIB
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/kservice/COPYING
+/usr/share/package-licenses/kservice/COPYING.GPL3
+/usr/share/package-licenses/kservice/COPYING.LIB
 
 %files man
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/man/ca/man8/desktoptojson.8
 /usr/share/man/ca/man8/kbuildsycoca5.8
 /usr/share/man/de/man8/desktoptojson.8
