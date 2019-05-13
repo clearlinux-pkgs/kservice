@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kservice
-Version  : 5.57.0
-Release  : 16
-URL      : https://download.kde.org/stable/frameworks/5.57/kservice-5.57.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.57/kservice-5.57.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.57/kservice-5.57.0.tar.xz.sig
+Version  : 5.58.0
+Release  : 17
+URL      : https://download.kde.org/stable/frameworks/5.58/kservice-5.58.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.58/kservice-5.58.0.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.58/kservice-5.58.0.tar.xz.sig
 Summary  : Advanced plugin and service introspection
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0 LGPL-2.1
@@ -18,7 +18,6 @@ Requires: kservice-data = %{version}-%{release}
 Requires: kservice-lib = %{version}-%{release}
 Requires: kservice-license = %{version}-%{release}
 Requires: kservice-locales = %{version}-%{release}
-Requires: kservice-man = %{version}-%{release}
 BuildRequires : bison-dev
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
@@ -69,6 +68,7 @@ Requires: kservice-bin = %{version}-%{release}
 Requires: kservice-data = %{version}-%{release}
 Provides: kservice-devel = %{version}-%{release}
 Requires: kservice = %{version}-%{release}
+Requires: kservice = %{version}-%{release}
 
 %description dev
 dev components for the kservice package.
@@ -100,23 +100,15 @@ Group: Default
 locales components for the kservice package.
 
 
-%package man
-Summary: man components for the kservice package.
-Group: Default
-
-%description man
-man components for the kservice package.
-
-
 %prep
-%setup -q -n kservice-5.57.0
+%setup -q -n kservice-5.58.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1557031243
+export SOURCE_DATE_EPOCH=1557775826
 mkdir -p clr-build
 pushd clr-build
 export AR=gcc-ar
@@ -131,7 +123,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1557031243
+export SOURCE_DATE_EPOCH=1557775826
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kservice
 cp COPYING %{buildroot}/usr/share/package-licenses/kservice/COPYING
@@ -204,36 +196,13 @@ mv %{buildroot}/etc/xdg/* %{buildroot}/usr/share/xdg/
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5Service.so.5
-/usr/lib64/libKF5Service.so.5.57.0
+/usr/lib64/libKF5Service.so.5.58.0
 
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/kservice/COPYING
 /usr/share/package-licenses/kservice/COPYING.GPL3
 /usr/share/package-licenses/kservice/COPYING.LIB
-
-%files man
-%defattr(0644,root,root,0755)
-/usr/share/man/ca/man8/desktoptojson.8
-/usr/share/man/ca/man8/kbuildsycoca5.8
-/usr/share/man/de/man8/desktoptojson.8
-/usr/share/man/de/man8/kbuildsycoca5.8
-/usr/share/man/es/man8/desktoptojson.8
-/usr/share/man/es/man8/kbuildsycoca5.8
-/usr/share/man/it/man8/desktoptojson.8
-/usr/share/man/it/man8/kbuildsycoca5.8
-/usr/share/man/man8/desktoptojson.8
-/usr/share/man/man8/kbuildsycoca5.8
-/usr/share/man/nl/man8/desktoptojson.8
-/usr/share/man/nl/man8/kbuildsycoca5.8
-/usr/share/man/pt/man8/desktoptojson.8
-/usr/share/man/pt/man8/kbuildsycoca5.8
-/usr/share/man/pt_BR/man8/desktoptojson.8
-/usr/share/man/pt_BR/man8/kbuildsycoca5.8
-/usr/share/man/sv/man8/desktoptojson.8
-/usr/share/man/sv/man8/kbuildsycoca5.8
-/usr/share/man/uk/man8/desktoptojson.8
-/usr/share/man/uk/man8/kbuildsycoca5.8
 
 %files locales -f kservice5.lang
 %defattr(-,root,root,-)
