@@ -6,7 +6,7 @@
 #
 Name     : kservice
 Version  : 5.60.0
-Release  : 19
+Release  : 20
 URL      : https://download.kde.org/stable/frameworks/5.60/kservice-5.60.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.60/kservice-5.60.0.tar.xz
 Source99 : https://download.kde.org/stable/frameworks/5.60/kservice-5.60.0.tar.xz.sig
@@ -69,7 +69,6 @@ Requires: kservice-bin = %{version}-%{release}
 Requires: kservice-data = %{version}-%{release}
 Provides: kservice-devel = %{version}-%{release}
 Requires: kservice = %{version}-%{release}
-Requires: kservice = %{version}-%{release}
 
 %description dev
 dev components for the kservice package.
@@ -117,7 +116,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1563059299
+export SOURCE_DATE_EPOCH=1563582204
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -128,12 +127,12 @@ export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
-%cmake ..
+%cmake .. -DKDE_INSTALL_SYSCONFDIR=/usr/share
 make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1563059299
+export SOURCE_DATE_EPOCH=1563582204
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kservice
 cp COPYING %{buildroot}/usr/share/package-licenses/kservice/COPYING
@@ -143,9 +142,6 @@ pushd clr-build
 %make_install
 popd
 %find_lang kservice5
-## install_append content
-mv %{buildroot}/etc/xdg/* %{buildroot}/usr/share/xdg/
-## install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -159,7 +155,7 @@ mv %{buildroot}/etc/xdg/* %{buildroot}/usr/share/xdg/
 /usr/share/kservicetypes5/application.desktop
 /usr/share/kservicetypes5/kplugininfo.desktop
 /usr/share/qlogging-categories5/kservice.categories
-/usr/share/xdg/applications.menu
+/usr/share/xdg/menus/applications.menu
 
 %files dev
 %defattr(-,root,root,-)
