@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kservice
-Version  : 5.64.0
-Release  : 24
-URL      : https://download.kde.org/stable/frameworks/5.64/kservice-5.64.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.64/kservice-5.64.0.tar.xz
-Source1 : https://download.kde.org/stable/frameworks/5.64/kservice-5.64.0.tar.xz.sig
+Version  : 5.65.0
+Release  : 25
+URL      : https://download.kde.org/stable/frameworks/5.65/kservice-5.65.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.65/kservice-5.65.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.65/kservice-5.65.0.tar.xz.sig
 Summary  : Advanced plugin and service introspection
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0 LGPL-2.1
@@ -69,7 +69,6 @@ Requires: kservice-bin = %{version}-%{release}
 Requires: kservice-data = %{version}-%{release}
 Provides: kservice-devel = %{version}-%{release}
 Requires: kservice = %{version}-%{release}
-Requires: kservice = %{version}-%{release}
 
 %description dev
 dev components for the kservice package.
@@ -110,17 +109,17 @@ man components for the kservice package.
 
 
 %prep
-%setup -q -n kservice-5.64.0
+%setup -q -n kservice-5.65.0
+cd %{_builddir}/kservice-5.65.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1573402725
+export SOURCE_DATE_EPOCH=1576535302
 mkdir -p clr-build
 pushd clr-build
-# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -134,12 +133,12 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1573402725
+export SOURCE_DATE_EPOCH=1576535302
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kservice
-cp %{_builddir}/kservice-5.64.0/COPYING %{buildroot}/usr/share/package-licenses/kservice/7c203dee3a03037da436df03c4b25b659c073976
-cp %{_builddir}/kservice-5.64.0/COPYING.GPL3 %{buildroot}/usr/share/package-licenses/kservice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/kservice-5.64.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/kservice/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/kservice-5.65.0/COPYING %{buildroot}/usr/share/package-licenses/kservice/7c203dee3a03037da436df03c4b25b659c073976
+cp %{_builddir}/kservice-5.65.0/COPYING.GPL3 %{buildroot}/usr/share/package-licenses/kservice/8624bcdae55baeef00cd11d5dfcfa60f68710a02
+cp %{_builddir}/kservice-5.65.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/kservice/9a1929f4700d2407c70b507b3b2aaf6226a9543c
 pushd clr-build
 %make_install
 popd
@@ -204,7 +203,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5Service.so.5
-/usr/lib64/libKF5Service.so.5.64.0
+/usr/lib64/libKF5Service.so.5.65.0
 
 %files license
 %defattr(0644,root,root,0755)
