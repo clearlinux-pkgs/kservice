@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kservice
-Version  : 5.75.0
-Release  : 34
-URL      : https://download.kde.org/stable/frameworks/5.75/kservice-5.75.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.75/kservice-5.75.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.75/kservice-5.75.0.tar.xz.sig
+Version  : 5.76.0
+Release  : 35
+URL      : https://download.kde.org/stable/frameworks/5.76/kservice-5.76.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.76/kservice-5.76.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.76/kservice-5.76.0.tar.xz.sig
 Summary  : Advanced plugin and service introspection
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -110,15 +110,15 @@ man components for the kservice package.
 
 
 %prep
-%setup -q -n kservice-5.75.0
-cd %{_builddir}/kservice-5.75.0
+%setup -q -n kservice-5.76.0
+cd %{_builddir}/kservice-5.76.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1602700213
+export SOURCE_DATE_EPOCH=1605418804
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -134,20 +134,20 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1602700213
+export SOURCE_DATE_EPOCH=1605418804
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kservice
-cp %{_builddir}/kservice-5.75.0/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kservice/2a638514c87c4923c0570c55822620fad56f2a33
-cp %{_builddir}/kservice-5.75.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kservice/e712eadfab0d2357c0f50f599ef35ee0d87534cb
-cp %{_builddir}/kservice-5.75.0/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kservice/6091db0aead0d90182b93d3c0d09ba93d188f907
-cp %{_builddir}/kservice-5.75.0/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kservice/20079e8f79713dce80ab09774505773c926afa2a
-cp %{_builddir}/kservice-5.75.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kservice/20079e8f79713dce80ab09774505773c926afa2a
-cp %{_builddir}/kservice-5.75.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/kservice/3c3d7573e137d48253731c975ecf90d74cfa9efe
-cp %{_builddir}/kservice-5.75.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kservice/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/kservice-5.75.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kservice/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/kservice-5.75.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kservice/7d9831e05094ce723947d729c2a46a09d6e90275
-cp %{_builddir}/kservice-5.75.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kservice/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/kservice-5.75.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kservice/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kservice-5.76.0/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kservice/2a638514c87c4923c0570c55822620fad56f2a33
+cp %{_builddir}/kservice-5.76.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kservice/e712eadfab0d2357c0f50f599ef35ee0d87534cb
+cp %{_builddir}/kservice-5.76.0/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kservice/6091db0aead0d90182b93d3c0d09ba93d188f907
+cp %{_builddir}/kservice-5.76.0/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kservice/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/kservice-5.76.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kservice/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/kservice-5.76.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/kservice/3c3d7573e137d48253731c975ecf90d74cfa9efe
+cp %{_builddir}/kservice-5.76.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kservice/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/kservice-5.76.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kservice/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/kservice-5.76.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kservice/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/kservice-5.76.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kservice/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kservice-5.76.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kservice/e458941548e0864907e654fa2e192844ae90fc32
 pushd clr-build
 %make_install
 popd
@@ -215,7 +215,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5Service.so.5
-/usr/lib64/libKF5Service.so.5.75.0
+/usr/lib64/libKF5Service.so.5.76.0
 
 %files license
 %defattr(0644,root,root,0755)
@@ -236,6 +236,7 @@ popd
 /usr/share/man/de/man8/kbuildsycoca5.8
 /usr/share/man/es/man8/desktoptojson.8
 /usr/share/man/es/man8/kbuildsycoca5.8
+/usr/share/man/fr/man8/kbuildsycoca5.8
 /usr/share/man/id/man8/desktoptojson.8
 /usr/share/man/it/man8/desktoptojson.8
 /usr/share/man/it/man8/kbuildsycoca5.8
