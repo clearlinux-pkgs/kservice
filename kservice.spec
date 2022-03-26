@@ -6,7 +6,7 @@
 #
 Name     : kservice
 Version  : 5.92.0
-Release  : 48
+Release  : 49
 URL      : https://download.kde.org/stable/frameworks/5.92/kservice-5.92.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/5.92/kservice-5.92.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/5.92/kservice-5.92.0.tar.xz.sig
@@ -18,6 +18,7 @@ Requires: kservice-data = %{version}-%{release}
 Requires: kservice-lib = %{version}-%{release}
 Requires: kservice-license = %{version}-%{release}
 Requires: kservice-locales = %{version}-%{release}
+Requires: kservice-man = %{version}-%{release}
 BuildRequires : bison-dev
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
@@ -99,16 +100,28 @@ Group: Default
 locales components for the kservice package.
 
 
+%package man
+Summary: man components for the kservice package.
+Group: Default
+
+%description man
+man components for the kservice package.
+
+
 %prep
 %setup -q -n kservice-5.92.0
 cd %{_builddir}/kservice-5.92.0
 
 %build
+## build_prepend content
+# Make sure the package only builds if kdoctools has been updated first
+sed -i -r -e 's,(KF.?DocTools \$\{KF.?_DEP_VERSION\})(.*\))$,\1 REQUIRED \2,' CMakeLists.txt
+## build_prepend end
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1647291804
+export SOURCE_DATE_EPOCH=1648270416
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -124,7 +137,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1647291804
+export SOURCE_DATE_EPOCH=1648270416
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kservice
 cp %{_builddir}/kservice-5.92.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kservice/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
@@ -219,6 +232,31 @@ popd
 /usr/share/package-licenses/kservice/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
 /usr/share/package-licenses/kservice/e458941548e0864907e654fa2e192844ae90fc32
 /usr/share/package-licenses/kservice/e712eadfab0d2357c0f50f599ef35ee0d87534cb
+
+%files man
+%defattr(0644,root,root,0755)
+/usr/share/man/ca/man8/desktoptojson.8
+/usr/share/man/ca/man8/kbuildsycoca5.8
+/usr/share/man/de/man8/desktoptojson.8
+/usr/share/man/de/man8/kbuildsycoca5.8
+/usr/share/man/es/man8/desktoptojson.8
+/usr/share/man/es/man8/kbuildsycoca5.8
+/usr/share/man/fr/man8/kbuildsycoca5.8
+/usr/share/man/id/man8/desktoptojson.8
+/usr/share/man/it/man8/desktoptojson.8
+/usr/share/man/it/man8/kbuildsycoca5.8
+/usr/share/man/man8/desktoptojson.8
+/usr/share/man/man8/kbuildsycoca5.8
+/usr/share/man/nl/man8/desktoptojson.8
+/usr/share/man/nl/man8/kbuildsycoca5.8
+/usr/share/man/pt/man8/desktoptojson.8
+/usr/share/man/pt/man8/kbuildsycoca5.8
+/usr/share/man/pt_BR/man8/desktoptojson.8
+/usr/share/man/pt_BR/man8/kbuildsycoca5.8
+/usr/share/man/sv/man8/desktoptojson.8
+/usr/share/man/sv/man8/kbuildsycoca5.8
+/usr/share/man/uk/man8/desktoptojson.8
+/usr/share/man/uk/man8/kbuildsycoca5.8
 
 %files locales -f kservice5.lang
 %defattr(-,root,root,-)
