@@ -448,6 +448,7 @@ libKF5Service.so.5:_ZNK8KService16runOnDiscreteGpuEv
 libKF5Service.so.5:_ZNK8KService16workingDirectoryEv
 libKF5Service.so.5:_ZNK8KService17initialPreferenceEv
 libKF5Service.so.5:_ZNK8KService18allowMultipleFilesEv
+libKF5Service.so.5:_ZNK8KService18supportedProtocolsEv
 libKF5Service.so.5:_ZNK8KService20showInCurrentDesktopEv
 libKF5Service.so.5:_ZNK8KService21showOnCurrentPlatformEv
 libKF5Service.so.5:_ZNK8KService23untranslatedGenericNameEv
