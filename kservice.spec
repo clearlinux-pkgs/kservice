@@ -6,11 +6,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kservice
-Version  : 5.105.0
-Release  : 164
-URL      : https://download.kde.org/stable/frameworks/5.105/kservice-5.105.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.105/kservice-5.105.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.105/kservice-5.105.0.tar.xz.sig
+Version  : 5.106.0
+Release  : 165
+URL      : https://download.kde.org/stable/frameworks/5.106/kservice-5.106.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.106/kservice-5.106.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.106/kservice-5.106.0.tar.xz.sig
 Summary  : Advanced plugin and service introspection
 Group    : Development/Tools
 License  : CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -113,19 +113,19 @@ man components for the kservice package.
 
 
 %prep
-%setup -q -n kservice-5.105.0
-cd %{_builddir}/kservice-5.105.0
+%setup -q -n kservice-5.106.0
+cd %{_builddir}/kservice-5.106.0
 
 %build
 ## build_prepend content
 # Make sure the package only builds if kdoctools has been updated first
-sed -i -r -e 's,(KF.?DocTools \$\{KF.?_DEP_VERSION\})(.*\))$,\1 REQUIRED \2,' CMakeLists.txt
+sed -i -r -e 's,(KF.?DocTools \$\{KF.?_DEP_VERSION\})(.*\))$,\1 REQUIRED \2,' CMakeLists.txt || :
 ## build_prepend end
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683036819
+export SOURCE_DATE_EPOCH=1684856012
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -139,9 +139,30 @@ export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonl
 %cmake .. -DKDE_INSTALL_SYSCONFDIR=/usr/share
 make  %{?_smp_mflags}
 popd
+mkdir -p clr-build-avx2
+pushd clr-build-avx2
+## build_prepend content
+# Make sure the package only builds if kdoctools has been updated first
+sed -i -r -e 's,(KF.?DocTools \$\{KF.?_DEP_VERSION\})(.*\))$,\1 REQUIRED \2,' CMakeLists.txt || :
+## build_prepend end
+export GCC_IGNORE_WERROR=1
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export FCFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export FFLAGS="$FFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export CXXFLAGS="$CXXFLAGS -O3 -Wl,-z,x86-64-v3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd -march=x86-64-v3 "
+export CFLAGS="$CFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export FFLAGS="$FFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+export FCFLAGS="$FCFLAGS -march=x86-64-v3 -m64 -Wl,-z,x86-64-v3"
+%cmake .. -DKDE_INSTALL_SYSCONFDIR=/usr/share
+make  %{?_smp_mflags}
+popd
 
 %install
-export SOURCE_DATE_EPOCH=1683036819
+export SOURCE_DATE_EPOCH=1684856012
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kservice
 cp %{_builddir}/kservice-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kservice/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
@@ -156,16 +177,21 @@ cp %{_builddir}/kservice-%{version}/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{b
 cp %{_builddir}/kservice-%{version}/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/kservice/7d9831e05094ce723947d729c2a46a09d6e90275 || :
 cp %{_builddir}/kservice-%{version}/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kservice/e458941548e0864907e654fa2e192844ae90fc32 || :
 cp %{_builddir}/kservice-%{version}/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kservice/e458941548e0864907e654fa2e192844ae90fc32 || :
+pushd clr-build-avx2
+%make_install_v3  || :
+popd
 pushd clr-build
 %make_install
 popd
 %find_lang kservice5
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
 
 %files bin
 %defattr(-,root,root,-)
+/V3/usr/bin/kbuildsycoca5
 /usr/bin/kbuildsycoca5
 
 %files data
@@ -178,6 +204,7 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
+/V3/usr/lib64/libKF5Service.so
 /usr/include/KF5/KService/KApplicationTrader
 /usr/include/KF5/KService/KAutostart
 /usr/include/KF5/KService/KDBusServiceStarter
@@ -222,8 +249,10 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
+/V3/usr/lib64/libKF5Service.so.5
+/V3/usr/lib64/libKF5Service.so.5.106.0
 /usr/lib64/libKF5Service.so.5
-/usr/lib64/libKF5Service.so.5.105.0
+/usr/lib64/libKF5Service.so.5.106.0
 
 %files license
 %defattr(0644,root,root,0755)
