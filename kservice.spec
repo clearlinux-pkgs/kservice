@@ -8,11 +8,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kservice
-Version  : 5.112.0
-Release  : 207
-URL      : https://download.kde.org/stable/frameworks/5.112/kservice-5.112.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.112/kservice-5.112.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.112/kservice-5.112.0.tar.xz.sig
+Version  : 5.113.0
+Release  : 208
+URL      : https://download.kde.org/stable/frameworks/5.113/kservice-5.113.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.113/kservice-5.113.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.113/kservice-5.113.0.tar.xz.sig
 Summary  : Advanced plugin and service introspection
 Group    : Development/Tools
 License  : CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -115,8 +115,8 @@ man components for the kservice package.
 
 
 %prep
-%setup -q -n kservice-5.112.0
-cd %{_builddir}/kservice-5.112.0
+%setup -q -n kservice-5.113.0
+cd %{_builddir}/kservice-5.113.0
 
 %build
 ## build_prepend content
@@ -127,7 +127,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1702003799
+export SOURCE_DATE_EPOCH=1702994519
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -190,7 +190,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1702003799
+export SOURCE_DATE_EPOCH=1702994519
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kservice
 cp %{_builddir}/kservice-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kservice/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
@@ -276,9 +276,9 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5Service.so.5.112.0
+/V3/usr/lib64/libKF5Service.so.5.113.0
 /usr/lib64/libKF5Service.so.5
-/usr/lib64/libKF5Service.so.5.112.0
+/usr/lib64/libKF5Service.so.5.113.0
 
 %files license
 %defattr(0644,root,root,0755)
