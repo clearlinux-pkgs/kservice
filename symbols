@@ -1,271 +1,79 @@
-libKF6Service.so.6:KSycocaDict::add(QString const&, QExplicitlySharedDataPointer<KSycocaEntry> const&)
-libKF6Service.so.6:KSycocaDict::save(QDataStream&)
-libKF6Service.so.6:KSycocaDict::clear()
-libKF6Service.so.6:KSycocaDict::remove(QString const&)
-libKF6Service.so.6:KSycocaDict::KSycocaDict(QDataStream*, int)
-libKF6Service.so.6:KSycocaDict::KSycocaDict()
-libKF6Service.so.6:KSycocaDict::KSycocaDict(QDataStream*, int)
-libKF6Service.so.6:KSycocaDict::KSycocaDict()
-libKF6Service.so.6:KSycocaDict::~KSycocaDict()
-libKF6Service.so.6:KSycocaDict::~KSycocaDict()
-libKF6Service.so.6:KBuildSycoca::sycocaPath()
-libKF6Service.so.6:KBuildSycoca::qt_metacall(QMetaObject::Call, int, void**)
-libKF6Service.so.6:KBuildSycoca::qt_metacast(char const*)
-libKF6Service.so.6:KBuildSycoca::createService(QString const&)
-libKF6Service.so.6:KBuildSycoca::calcResourceHash(QString const&, QString const&)
+libKF6Service.so.6:KBuildSycoca::KBuildSycoca()
 libKF6Service.so.6:KBuildSycoca::checkGlobalHeader()
+libKF6Service.so.6:KBuildSycoca::existingResourceDirs()
 libKF6Service.so.6:KBuildSycoca::factoryExtraFiles()
 libKF6Service.so.6:KBuildSycoca::factoryResourceDirs()
-libKF6Service.so.6:KBuildSycoca::existingResourceDirs()
 libKF6Service.so.6:KBuildSycoca::recreate(bool)
-libKF6Service.so.6:KBuildSycoca::KBuildSycoca()
-libKF6Service.so.6:KBuildSycoca::KBuildSycoca()
+libKF6Service.so.6:KBuildSycoca::sycocaPath()
 libKF6Service.so.6:KBuildSycoca::~KBuildSycoca()
-libKF6Service.so.6:KBuildSycoca::~KBuildSycoca()
-libKF6Service.so.6:KBuildSycoca::~KBuildSycoca()
-libKF6Service.so.6:KSycocaEntry::setDeleted(bool)
-libKF6Service.so.6:KSycocaEntry::KSycocaEntry()
-libKF6Service.so.6:KSycocaEntry::KSycocaEntry()
-libKF6Service.so.6:KSycocaEntry::~KSycocaEntry()
-libKF6Service.so.6:KSycocaEntry::~KSycocaEntry()
-libKF6Service.so.6:KSycocaEntry::~KSycocaEntry()
-libKF6Service.so.6:KServiceGroup::childGroup(QString const&)
+libKF6Service.so.6:KMimeTypeFactory::MimeTypeEntry::setServiceOffersOffset(int)
+libKF6Service.so.6:KMimeTypeFactory::MimeTypeEntry::~MimeTypeEntry()
+libKF6Service.so.6:KService::allServices()
+libKF6Service.so.6:KService::setTerminal(bool)
+libKF6Service.so.6:KService::~KService()
+libKF6Service.so.6:KServiceAction::KServiceAction()
+libKF6Service.so.6:KServiceAction::~KServiceAction()
+libKF6Service.so.6:KServiceFactory::KServiceFactory(KSycoca*)
+libKF6Service.so.6:KServiceFactory::allServices()
+libKF6Service.so.6:KServiceFactory::resourceDirs()
+libKF6Service.so.6:KServiceFactory::~KServiceFactory()
+libKF6Service.so.6:KServiceGroup::entries(bool)
 libKF6Service.so.6:KServiceGroup::groupEntries(QFlags<KServiceGroup::EntriesOption>)
-libKF6Service.so.6:KServiceGroup::setLayoutInfo(QList<QString> const&)
+libKF6Service.so.6:KServiceGroup::root()
 libKF6Service.so.6:KServiceGroup::serviceEntries(QFlags<KServiceGroup::EntriesOption>)
 libKF6Service.so.6:KServiceGroup::setAllowInline(bool)
 libKF6Service.so.6:KServiceGroup::setInlineAlias(bool)
 libKF6Service.so.6:KServiceGroup::setInlineValue(int)
 libKF6Service.so.6:KServiceGroup::setShowEmptyMenu(bool)
 libKF6Service.so.6:KServiceGroup::setShowInlineHeader(bool)
-libKF6Service.so.6:KServiceGroup::root()
-libKF6Service.so.6:KServiceGroup::group(QString const&)
-libKF6Service.so.6:KServiceGroup::entries(bool)
-libKF6Service.so.6:KServiceGroup::entries(bool, bool)
-libKF6Service.so.6:KServiceGroup::entries(bool, bool, bool, bool)
-libKF6Service.so.6:KServiceGroup::addEntry(QExplicitlySharedDataPointer<KSycocaEntry> const&)
-libKF6Service.so.6:KServiceGroup::KServiceGroup(QString const&)
-libKF6Service.so.6:KServiceGroup::KServiceGroup(QString const&, QString const&)
-libKF6Service.so.6:KServiceGroup::KServiceGroup(QString const&)
-libKF6Service.so.6:KServiceGroup::KServiceGroup(QString const&, QString const&)
 libKF6Service.so.6:KServiceGroup::~KServiceGroup()
-libKF6Service.so.6:KServiceGroup::~KServiceGroup()
-libKF6Service.so.6:KServiceGroup::~KServiceGroup()
-libKF6Service.so.6:KServiceOffer::setPreference(int)
+libKF6Service.so.6:KServiceOffer::KServiceOffer()
 libKF6Service.so.6:KServiceOffer::setMimeTypeInheritanceLevel(int)
-libKF6Service.so.6:KServiceOffer::KServiceOffer(QExplicitlySharedDataPointer<KService> const&, int, int)
-libKF6Service.so.6:KServiceOffer::KServiceOffer(KServiceOffer const&)
-libKF6Service.so.6:KServiceOffer::KServiceOffer()
-libKF6Service.so.6:KServiceOffer::KServiceOffer(QExplicitlySharedDataPointer<KService> const&, int, int)
-libKF6Service.so.6:KServiceOffer::KServiceOffer(KServiceOffer const&)
-libKF6Service.so.6:KServiceOffer::KServiceOffer()
+libKF6Service.so.6:KServiceOffer::setPreference(int)
 libKF6Service.so.6:KServiceOffer::~KServiceOffer()
-libKF6Service.so.6:KServiceOffer::~KServiceOffer()
-libKF6Service.so.6:KServiceOffer::operator=(KServiceOffer const&)
-libKF6Service.so.6:KServiceAction::setData(QVariant const&)
-libKF6Service.so.6:KServiceAction::KServiceAction(QString const&, QString const&, QString const&, QString const&, bool, QExplicitlySharedDataPointer<KService> const&)
-libKF6Service.so.6:KServiceAction::KServiceAction(KServiceAction const&)
-libKF6Service.so.6:KServiceAction::KServiceAction()
-libKF6Service.so.6:KServiceAction::KServiceAction(QString const&, QString const&, QString const&, QString const&, bool, QExplicitlySharedDataPointer<KService> const&)
-libKF6Service.so.6:KServiceAction::KServiceAction(KServiceAction const&)
-libKF6Service.so.6:KServiceAction::KServiceAction()
-libKF6Service.so.6:KServiceAction::~KServiceAction()
-libKF6Service.so.6:KServiceAction::~KServiceAction()
-libKF6Service.so.6:KServiceAction::operator=(KServiceAction const&)
-libKF6Service.so.6:KSycocaFactory::saveHeader(QDataStream&)
-libKF6Service.so.6:KSycocaFactory::removeEntry(QString const&)
-libKF6Service.so.6:KSycocaFactory::virtual_hook(int, void*)
-libKF6Service.so.6:KSycocaFactory::allDirectories(QString const&)
-libKF6Service.so.6:KSycocaFactory::save(QDataStream&)
-libKF6Service.so.6:KSycocaFactory::addEntry(QExplicitlySharedDataPointer<KSycocaEntry> const&)
-libKF6Service.so.6:KSycocaFactory::KSycocaFactory(KSycocaFactoryId, KSycoca*)
-libKF6Service.so.6:KSycocaFactory::KSycocaFactory(KSycocaFactoryId, KSycoca*)
-libKF6Service.so.6:KSycocaFactory::~KSycocaFactory()
-libKF6Service.so.6:KSycocaFactory::~KSycocaFactory()
-libKF6Service.so.6:KSycocaFactory::~KSycocaFactory()
-libKF6Service.so.6:KSycocaPrivate::buildSycoca()
-libKF6Service.so.6:KSycocaPrivate::checkVersion()
-libKF6Service.so.6:KSycocaPrivate::findDatabase()
-libKF6Service.so.6:KSycocaPrivate::needsRebuild()
-libKF6Service.so.6:KSycocaPrivate::openDatabase()
-libKF6Service.so.6:KSycocaPrivate::checkDatabase(QFlags<KSycocaPrivate::BehaviorIfNotFound>)
-libKF6Service.so.6:KSycocaPrivate::closeDatabase()
-libKF6Service.so.6:KSycocaPrivate::serviceFactory()
-libKF6Service.so.6:KSycocaPrivate::mimeTypeFactory()
-libKF6Service.so.6:KSycocaPrivate::checkDirectories()
-libKF6Service.so.6:KSycocaPrivate::readSycocaHeader()
-libKF6Service.so.6:KSycocaPrivate::serviceGroupFactory()
-libKF6Service.so.6:KSycocaPrivate::slotDatabaseChanged()
-libKF6Service.so.6:KSycocaPrivate::setStrategyFromString(QString const&)
-libKF6Service.so.6:KSycocaPrivate::device()
-libKF6Service.so.6:KSycocaPrivate::stream()
-libKF6Service.so.6:KSycocaPrivate::tryMmap()
-libKF6Service.so.6:KSycocaPrivate::KSycocaPrivate(KSycoca*)
-libKF6Service.so.6:KSycocaPrivate::KSycocaPrivate(KSycoca*)
-libKF6Service.so.6:KServiceFactory::allServices()
-libKF6Service.so.6:KServiceFactory::resourceDirs()
-libKF6Service.so.6:KServiceFactory::virtual_hook(int, void*)
-libKF6Service.so.6:KServiceFactory::serviceOffers(int, int)
-libKF6Service.so.6:KServiceFactory::findServiceByName(QString const&)
-libKF6Service.so.6:KServiceFactory::findServiceByMenuId(QString const&)
-libKF6Service.so.6:KServiceFactory::findServiceByStorageId(QString const&)
-libKF6Service.so.6:KServiceFactory::findServiceByDesktopName(QString const&)
-libKF6Service.so.6:KServiceFactory::findServiceByDesktopPath(QString const&)
-libKF6Service.so.6:KServiceFactory::offers(int, int)
-libKF6Service.so.6:KServiceFactory::hasOffer(int, int, int)
-libKF6Service.so.6:KServiceFactory::KServiceFactory(KSycoca*)
-libKF6Service.so.6:KServiceFactory::KServiceFactory(KSycoca*)
-libKF6Service.so.6:KServiceFactory::~KServiceFactory()
-libKF6Service.so.6:KServiceFactory::~KServiceFactory()
-libKF6Service.so.6:KServiceFactory::~KServiceFactory()
-libKF6Service.so.6:KMimeTypeFactory::MimeTypeEntry::setServiceOffersOffset(int)
-libKF6Service.so.6:KMimeTypeFactory::MimeTypeEntry::MimeTypeEntry(QDataStream&, int)
-libKF6Service.so.6:KMimeTypeFactory::MimeTypeEntry::MimeTypeEntry(QString const&, QString const&)
-libKF6Service.so.6:KMimeTypeFactory::MimeTypeEntry::MimeTypeEntry(QDataStream&, int)
-libKF6Service.so.6:KMimeTypeFactory::MimeTypeEntry::MimeTypeEntry(QString const&, QString const&)
-libKF6Service.so.6:KMimeTypeFactory::MimeTypeEntry::~MimeTypeEntry()
-libKF6Service.so.6:KMimeTypeFactory::MimeTypeEntry::~MimeTypeEntry()
-libKF6Service.so.6:KMimeTypeFactory::MimeTypeEntry::~MimeTypeEntry()
-libKF6Service.so.6:KApplicationTrader::isSubsequence(QString const&, QString const&, Qt::CaseSensitivity)
-libKF6Service.so.6:KApplicationTrader::queryByMimeType(QString const&, std::function<bool (QExplicitlySharedDataPointer<KService> const&)>)
-libKF6Service.so.6:KApplicationTrader::preferredService(QString const&)
-libKF6Service.so.6:KApplicationTrader::setPreferredService(QString const&, QExplicitlySharedDataPointer<KService>)
-libKF6Service.so.6:KApplicationTrader::query(std::function<bool (QExplicitlySharedDataPointer<KService> const&)>)
-libKF6Service.so.6:KSycoca::addFactory(KSycocaFactory*)
-libKF6Service.so.6:KSycoca::isBuilding()
-libKF6Service.so.6:KSycoca::clearCaches()
-libKF6Service.so.6:KSycoca::findFactory(KSycocaFactoryId)
-libKF6Service.so.6:KSycoca::isAvailable()
-libKF6Service.so.6:KSycoca::qt_metacall(QMetaObject::Call, int, void**)
-libKF6Service.so.6:KSycoca::qt_metacast(char const*)
-libKF6Service.so.6:KSycoca::connectNotify(QMetaMethod const&)
-libKF6Service.so.6:KSycoca::setupTestMenu()
-libKF6Service.so.6:KSycoca::allResourceDirs()
-libKF6Service.so.6:KSycoca::databaseChanged()
+libKF6Service.so.6:KSycoca::KSycoca()
+libKF6Service.so.6:KSycoca::KSycoca(bool)
 libKF6Service.so.6:KSycoca::absoluteFilePath()
-libKF6Service.so.6:KSycoca::ensureCacheValid()
+libKF6Service.so.6:KSycoca::addFactory(KSycocaFactory*)
+libKF6Service.so.6:KSycoca::allResourceDirs()
+libKF6Service.so.6:KSycoca::clearCaches()
+libKF6Service.so.6:KSycoca::databaseChanged()
 libKF6Service.so.6:KSycoca::disableAutoRebuild()
+libKF6Service.so.6:KSycoca::ensureCacheValid()
+libKF6Service.so.6:KSycoca::factories()
+libKF6Service.so.6:KSycoca::findFactory(KSycocaFactoryId)
+libKF6Service.so.6:KSycoca::flagError()
+libKF6Service.so.6:KSycoca::isAvailable()
+libKF6Service.so.6:KSycoca::isBuilding()
 libKF6Service.so.6:KSycoca::self()
+libKF6Service.so.6:KSycoca::setupTestMenu()
 libKF6Service.so.6:KSycoca::stream()
 libKF6Service.so.6:KSycoca::version()
-libKF6Service.so.6:KSycoca::factories()
-libKF6Service.so.6:KSycoca::findEntry(int, KSycocaType&)
-libKF6Service.so.6:KSycoca::flagError()
-libKF6Service.so.6:KSycoca::KSycoca(bool)
-libKF6Service.so.6:KSycoca::KSycoca()
-libKF6Service.so.6:KSycoca::KSycoca(bool)
-libKF6Service.so.6:KSycoca::KSycoca()
 libKF6Service.so.6:KSycoca::~KSycoca()
-libKF6Service.so.6:KSycoca::~KSycoca()
-libKF6Service.so.6:KSycoca::~KSycoca()
-libKF6Service.so.6:KService::setActions(QList<KServiceAction> const&)
-libKF6Service.so.6:KService::allServices()
-libKF6Service.so.6:KService::setTerminal(bool)
-libKF6Service.so.6:KService::newServicePath(bool, QString const&, QString*, QList<QString> const*)
-libKF6Service.so.6:KService::serviceByMenuId(QString const&)
-libKF6Service.so.6:KService::serviceByStorageId(QString const&)
-libKF6Service.so.6:KService::setTerminalOptions(QString const&)
-libKF6Service.so.6:KService::setWorkingDirectory(QString const&)
-libKF6Service.so.6:KService::serviceByDesktopName(QString const&)
-libKF6Service.so.6:KService::serviceByDesktopPath(QString const&)
-libKF6Service.so.6:KService::setExec(QString const&)
-libKF6Service.so.6:KService::setMenuId(QString const&)
-libKF6Service.so.6:KService::KService(KDesktopFile const*, QString const&)
-libKF6Service.so.6:KService::KService(QString const&)
-libKF6Service.so.6:KService::KService(QString const&, QString const&, QString const&)
-libKF6Service.so.6:KService::KService(KService const&)
-libKF6Service.so.6:KService::KService(KDesktopFile const*, QString const&)
-libKF6Service.so.6:KService::KService(QString const&)
-libKF6Service.so.6:KService::KService(QString const&, QString const&, QString const&)
-libKF6Service.so.6:KService::KService(KService const&)
-libKF6Service.so.6:KService::~KService()
-libKF6Service.so.6:KService::~KService()
-libKF6Service.so.6:KService::~KService()
-libKF6Service.so.6:KSycocaDict::find_string(QString const&) const
-libKF6Service.so.6:KSycocaDict::findMultiString(QString const&) const
-libKF6Service.so.6:KSycocaDict::count() const
-libKF6Service.so.6:KBuildSycoca::metaObject() const
-libKF6Service.so.6:KSycocaEntry::sycocaType() const
-libKF6Service.so.6:KSycocaEntry::isSeparator() const
-libKF6Service.so.6:KSycocaEntry::name() const
-libKF6Service.so.6:KSycocaEntry::isType(KSycocaType) const
-libKF6Service.so.6:KSycocaEntry::isValid() const
-libKF6Service.so.6:KSycocaEntry::entryPath() const
-libKF6Service.so.6:KSycocaEntry::isDeleted() const
-libKF6Service.so.6:KSycocaEntry::storageId() const
-libKF6Service.so.6:KServiceGroup::childCount() const
-libKF6Service.so.6:KServiceGroup::layoutInfo() const
-libKF6Service.so.6:KServiceGroup::allowInline() const
-libKF6Service.so.6:KServiceGroup::inlineAlias() const
-libKF6Service.so.6:KServiceGroup::inlineValue() const
-libKF6Service.so.6:KServiceGroup::baseGroupName() const
-libKF6Service.so.6:KServiceGroup::showEmptyMenu() const
-libKF6Service.so.6:KServiceGroup::showInlineHeader() const
-libKF6Service.so.6:KServiceGroup::directoryEntryPath() const
-libKF6Service.so.6:KServiceGroup::suppressGenericNames() const
-libKF6Service.so.6:KServiceGroup::icon() const
-libKF6Service.so.6:KServiceGroup::caption() const
-libKF6Service.so.6:KServiceGroup::comment() const
-libKF6Service.so.6:KServiceGroup::relPath() const
-libKF6Service.so.6:KServiceGroup::noDisplay() const
-libKF6Service.so.6:KServiceOffer::preference() const
-libKF6Service.so.6:KServiceOffer::mimeTypeInheritanceLevel() const
-libKF6Service.so.6:KServiceOffer::isValid() const
-libKF6Service.so.6:KServiceOffer::service() const
-libKF6Service.so.6:KServiceOffer::operator<(KServiceOffer const&) const
-libKF6Service.so.6:KServiceAction::isSeparator() const
-libKF6Service.so.6:KServiceAction::data() const
-libKF6Service.so.6:KServiceAction::exec() const
-libKF6Service.so.6:KServiceAction::icon() const
-libKF6Service.so.6:KServiceAction::name() const
-libKF6Service.so.6:KServiceAction::text() const
-libKF6Service.so.6:KServiceAction::service() const
-libKF6Service.so.6:KServiceAction::property(QString const&, QMetaType::Type) const
-libKF6Service.so.6:KServiceAction::noDisplay() const
-libKF6Service.so.6:KSycocaFactory::allEntries() const
-libKF6Service.so.6:KSycocaFactory::sycocaDict() const
-libKF6Service.so.6:KSycocaFactory::resourceList() const
-libKF6Service.so.6:KSycocaFactory::offset() const
-libKF6Service.so.6:KSycocaFactory::stream() const
-libKF6Service.so.6:KSycocaFactory::isEmpty() const
-libKF6Service.so.6:KServiceFactory::createEntry(int) const
-libKF6Service.so.6:KMimeTypeFactory::MimeTypeEntry::serviceOffersOffset() const
-libKF6Service.so.6:KSycoca::metaObject() const
-libKF6Service.so.6:KService::categories() const
-libKF6Service.so.6:KService::genericName() const
-libKF6Service.so.6:KService::hasMimeType(QString const&) const
-libKF6Service.so.6:KService::locateLocal() const
-libKF6Service.so.6:KService::isApplication() const
-libKF6Service.so.6:KService::startupNotify() const
-libKF6Service.so.6:KService::substituteUid() const
-libKF6Service.so.6:KService::schemeHandlers() const
-libKF6Service.so.6:KService::terminalOptions() const
-libKF6Service.so.6:KService::desktopEntryName() const
-libKF6Service.so.6:KService::runOnDiscreteGpu() const
-libKF6Service.so.6:KService::untranslatedName() const
-libKF6Service.so.6:KService::workingDirectory() const
-libKF6Service.so.6:KService::allowMultipleFiles() const
-libKF6Service.so.6:KService::supportedProtocols() const
-libKF6Service.so.6:KService::showInCurrentDesktop() const
-libKF6Service.so.6:KService::showOnCurrentPlatform() const
-libKF6Service.so.6:KService::untranslatedGenericName() const
-libKF6Service.so.6:KService::exec() const
-libKF6Service.so.6:KService::icon() const
-libKF6Service.so.6:KService::menuId() const
-libKF6Service.so.6:KService::actions() const
-libKF6Service.so.6:KService::comment() const
-libKF6Service.so.6:KService::docPath() const
-libKF6Service.so.6:KService::aliasFor() const
-libKF6Service.so.6:KService::keywords() const
-libKF6Service.so.6:KService::property(QString const&, QMetaType::Type) const
-libKF6Service.so.6:QString KService::property<QString>(QString const&) const
-libKF6Service.so.6:KService::terminal() const
-libKF6Service.so.6:KService::username() const
-libKF6Service.so.6:KService::mimeTypes() const
-libKF6Service.so.6:KService::noDisplay() const
-libKF6Service.so.6:KService::storageId() const
-libKF6Service.so.6:non-virtual thunk to KBuildSycoca::createService(QString const&)
-libKF6Service.so.6:non-virtual thunk to KBuildSycoca::~KBuildSycoca()
-libKF6Service.so.6:non-virtual thunk to KBuildSycoca::~KBuildSycoca()
-libKF6Service.so.6:operator<<(QDataStream&, KServiceAction const&)
-libKF6Service.so.6:operator>>(QDataStream&, KServiceAction&)
+libKF6Service.so.6:KSycocaDict::KSycocaDict()
+libKF6Service.so.6:KSycocaDict::clear()
+libKF6Service.so.6:KSycocaDict::save(QDataStream&)
+libKF6Service.so.6:KSycocaDict::~KSycocaDict()
+libKF6Service.so.6:KSycocaEntry::KSycocaEntry()
+libKF6Service.so.6:KSycocaEntry::setDeleted(bool)
+libKF6Service.so.6:KSycocaEntry::~KSycocaEntry()
+libKF6Service.so.6:KSycocaFactory::save(QDataStream&)
+libKF6Service.so.6:KSycocaFactory::saveHeader(QDataStream&)
+libKF6Service.so.6:KSycocaFactory::~KSycocaFactory()
+libKF6Service.so.6:KSycocaPrivate::KSycocaPrivate(KSycoca*)
+libKF6Service.so.6:KSycocaPrivate::buildSycoca()
+libKF6Service.so.6:KSycocaPrivate::checkDatabase(QFlags<KSycocaPrivate::BehaviorIfNotFound>)
+libKF6Service.so.6:KSycocaPrivate::checkDirectories()
+libKF6Service.so.6:KSycocaPrivate::checkVersion()
+libKF6Service.so.6:KSycocaPrivate::closeDatabase()
+libKF6Service.so.6:KSycocaPrivate::device()
+libKF6Service.so.6:KSycocaPrivate::findDatabase()
+libKF6Service.so.6:KSycocaPrivate::mimeTypeFactory()
+libKF6Service.so.6:KSycocaPrivate::needsRebuild()
+libKF6Service.so.6:KSycocaPrivate::openDatabase()
+libKF6Service.so.6:KSycocaPrivate::readSycocaHeader()
+libKF6Service.so.6:KSycocaPrivate::serviceFactory()
+libKF6Service.so.6:KSycocaPrivate::serviceGroupFactory()
+libKF6Service.so.6:KSycocaPrivate::slotDatabaseChanged()
+libKF6Service.so.6:KSycocaPrivate::stream()
+libKF6Service.so.6:KSycocaPrivate::tryMmap()
