@@ -9,7 +9,7 @@
 #
 Name     : kservice
 Version  : 6.13.0
-Release  : 234
+Release  : 235
 URL      : https://download.kde.org/stable/frameworks/6.13/kservice-6.13.0.tar.xz
 Source0  : https://download.kde.org/stable/frameworks/6.13/kservice-6.13.0.tar.xz
 Source1  : https://download.kde.org/stable/frameworks/6.13/kservice-6.13.0.tar.xz.sig
